@@ -417,6 +417,7 @@ class Chosen extends AbstractChosen
   show_create_option: (terms) ->
     create_option_html = $('<li class="create-option active-result"><a>' + @create_option_text + '</a>: "' + terms + '"</li>')
     @search_results.append create_option_html
+    this.winnow_results_set_highlight()
 
   create_option_clear: ->
     @search_results.find(".create-option").remove()

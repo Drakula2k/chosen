@@ -417,6 +417,7 @@ class @Chosen extends AbstractChosen
     create_option_html = @create_option_temp.evaluate( terms: terms, text: @create_option_text )
     @search_results.insert create_option_html
     @search_results.down(".create-option").observe "click", (evt) => this.select_create_option(terms)
+    this.winnow_results_set_highlight()
 
   create_option_clear: ->
     co = null
